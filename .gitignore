@@ -1,0 +1,13 @@
+# Python Virtual Environment
+venv/
+env/
+
+# Environment Variables (CRITICAL SECURITY)
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Raw AI Training Data (Too heavy for GitHub)
+AI_TRAINING_DATA/
