@@ -2,12 +2,12 @@
 venv/
 env/
 
-# Environment Variables (CRITICAL SECURITY)
+# Environment Variables
 .env
 
 # Python Cache
 __pycache__/
 *.pyc
 
-# Raw AI Training Data (Too heavy for GitHub)
+# Raw AI Training Data
 AI_TRAINING_DATA/
