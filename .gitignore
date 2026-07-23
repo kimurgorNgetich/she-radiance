@@ -11,3 +11,6 @@ __pycache__/
 
 # Raw AI Training Data
 AI_TRAINING_DATA/
+# SR-001: eval images (biometric — never commit)
+experiments/eval_set/
+experiments/raw_staging/
