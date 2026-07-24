@@ -17,7 +17,7 @@ def get_routine_from_db(ai_diagnosis):
         
         # Pull ingredients for the specific diagnosis, AND the sunscreen ("All")
         sql_query = """
-            SELECT Active_Compound, Treatment_Phase, Dermatological_Logic
+            SELECT DISTINCT Active_Compound, Treatment_Phase, Dermatological_Logic
             FROM INGREDIENT_DB
             WHERE Target_Condition = %s OR Target_Condition = 'All';
         """
@@ -108,6 +108,36 @@ def route_treatment(ai_diagnosis):
     else:
         return {"status": "error", "message": "Unknown diagnosis received."}
     
+def route_from_vision(vision_result: dict) -> dict:
+    """
+    SR-002: Routing entry point for vision-API-based diagnoses (backend/vision_client.py).
+    Applies referral policy to a vision_client.analyze_selfie() result, then delegates to
+    the existing route_treatment() DB/safety/sort pipeline for known conditions.
+    """
+    status = vision_result.get("status")
+    condition = vision_result.get("condition")
+    referral_flag = vision_result.get("referral_flag")
+
+    # a. Engine-level failure (api_error, auth_error, parse_error, refusal, ...)
+    if status != "ok":
+        return {"status": "inconclusive", "reason": "engine_error"}
+
+    # b. Model itself was not confident enough to pick a condition
+    if condition == "Uncertain_Refer":
+        return {"status": "inconclusive", "reason": "low_certainty"}
+
+    # c. Severe acne or an explicit referral flag -> existing medical redirect payload
+    if condition == "Acne_Severe" or referral_flag is True:
+        return route_treatment("Acne_Severe")
+
+    # d. Known, routable conditions -> existing DB query + enforce_safety_rules + sort_chronologically
+    if condition in ("Acne_Mild", "Hyperpigmentation", "Clear_Skin"):
+        return route_treatment(condition)
+
+    # e. Anything else (unrecognized label)
+    return {"status": "inconclusive", "reason": "unknown_label"}
+
+
 if __name__ == "__main__":
     # Simulating the AI detecting Mild Acne
     print("\n--- TEST 1: Acne_Mild ---")

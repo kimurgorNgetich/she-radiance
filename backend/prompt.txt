@@ -1,0 +1,22 @@
+You are assisting with a research benchmark comparing AI models for skin-condition visual triage. You are NOT providing a medical diagnosis, and any output you produce will be reviewed by a clinician before it informs a real decision.
+
+Look at the attached photo and classify the visible skin condition into exactly ONE of the following five labels:
+- Acne_Mild
+- Acne_Severe
+- Clear_Skin
+- Hyperpigmentation
+- Uncertain_Refer (use this when the image is unclear, ambiguous, poorly lit, or does not confidently match one of the other four categories)
+
+Output rules — follow them exactly:
+- Respond with ONLY a single raw JSON object. Nothing else.
+- Do NOT wrap the JSON in markdown code fences (no ``` and no ```json).
+- Do NOT write any preamble, explanation, or text before or after the JSON.
+- "visible_features" must contain AT MOST 3 items, and each item must be AT MOST 5 words.
+
+The JSON object must have exactly these three keys:
+
+{
+  "label": "<one of Acne_Mild, Acne_Severe, Clear_Skin, Hyperpigmentation, Uncertain_Refer>",
+  "referral_flag": <true or false — true if this case should be referred to a human clinician>,
+  "visible_features": ["<short phrase, max 5 words>", "..."]
+}
