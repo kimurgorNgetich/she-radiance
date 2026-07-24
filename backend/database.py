@@ -1,10 +1,10 @@
 import os
 import psycopg2
 from psycopg2 import OperationalError
+from pathlib import Path
 from dotenv import load_dotenv
 
-#load the hidden variables from the .env file into the system
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 def create_connection():
     try:
