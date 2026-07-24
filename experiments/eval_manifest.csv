@@ -1,0 +1,49 @@
+image_id,filepath,true_label,fitzpatrick_bucket,source,notes 
+eval_001,eval_set/Acne_Mild/eval_001.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/11 days later 9-19-13.jpg
+eval_002,eval_set/Acne_Mild/eval_002.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/167196204913793414.jpg
+eval_003,eval_set/Acne_Mild/eval_003.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/ab3autiful_mindd on Instagram_ Consistency is Key….jpg
+eval_004,eval_set/Acne_Mild/eval_004.jpg,Acne_Mild,I-III,manual_batch_1,orig:Acne_Mild/acnee.jpg
+eval_005,eval_set/Acne_Mild/eval_005.jpg,Acne_Mild,I-III,manual_batch_1,"orig:Acne_Mild/Close-up of a woman’s face, a Health & Medical Photo by MistyDay.jpg"
+eval_006,eval_set/Acne_Mild/eval_006.jpg,Acne_Mild,I-III,manual_batch_1,orig:Acne_Mild/Guía desolucionesantiacné.jpg
+eval_007,eval_set/Acne_Mild/eval_007.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/IMG-20260723-WA0021.jpg
+eval_008,eval_set/Acne_Mild/eval_008.jpg,Acne_Mild,I-III,manual_batch_1,orig:Acne_Mild/Mejoressolucionespara granos.jpg
+eval_009,eval_set/Acne_Mild/eval_009.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/Quel soin il faut_.jpg
+eval_010,eval_set/Acne_Mild/eval_010.jpg,Acne_Mild,I-III,manual_batch_1,orig:Acne_Mild/Re_ What should I do__ - Beauty Insider Community.jpg
+eval_011,eval_set/Acne_Mild/eval_011.jpg,Acne_Mild,IV-VI,manual_batch_1,orig:Acne_Mild/What do you see____Acne Postcard from 30th of….jpg
+eval_012,eval_set/Acne_Mild/eval_012.jpg,Acne_Mild,I-III,manual_batch_1,orig:Acne_Mild/Реалистичные текстуры кожи _ AI-визуал для бьюти и косметологии.jpg
+eval_013,eval_set/Acne_Severe/eval_013.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/#acne.jpg
+eval_014,eval_set/Acne_Severe/eval_014.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/141370875799288598.jpg
+eval_015,eval_set/Acne_Severe/eval_015.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/Acne allergy journey(1).jpg
+eval_016,eval_set/Acne_Severe/eval_016.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/Cystic Acne to Clear Skin in 3 months.jpg
+eval_017,eval_set/Acne_Severe/eval_017.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/Fresh_ homemade face mask for acne how to remove pimples video step by step 🌿 [#33q7].jpg
+eval_018,eval_set/Acne_Severe/eval_018.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0022.jpg
+eval_019,eval_set/Acne_Severe/eval_019.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0025.jpg
+eval_020,eval_set/Acne_Severe/eval_020.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0027.jpg
+eval_021,eval_set/Acne_Severe/eval_021.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0036.jpg
+eval_022,eval_set/Acne_Severe/eval_022.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0042.jpg
+eval_023,eval_set/Acne_Severe/eval_023.jpg,Acne_Severe,IV-VI,manual_batch_1,orig:Acne_Severe/IMG-20260723-WA0045 - Copy.jpg
+eval_024,eval_set/Acne_Severe/eval_024.jpg,Acne_Severe,I-III,manual_batch_1,orig:Acne_Severe/🌟 DIY beginner blackhead mask tutorial watch Tricks [#cv26].jpg
+eval_025,eval_set/Clear_Skin/eval_025.jpg,Clear_Skin,I-III,manual_batch_1,orig:Clear_Skin/138415388542058939.jpg
+eval_026,eval_set/Clear_Skin/eval_026.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/20758848278007557.jpg
+eval_027,eval_set/Clear_Skin/eval_027.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/304767099804652917.jpg
+eval_028,eval_set/Clear_Skin/eval_028.jpg,Clear_Skin,I-III,manual_batch_1,orig:Clear_Skin/42502790233809688.jpg
+eval_029,eval_set/Clear_Skin/eval_029.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/50172983344334749.jpg
+eval_030,eval_set/Clear_Skin/eval_030.jpg,Clear_Skin,I-III,manual_batch_1,orig:Clear_Skin/68539225574958087.jpg
+eval_031,eval_set/Clear_Skin/eval_031.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/72198400273470428.jpg
+eval_032,eval_set/Clear_Skin/eval_032.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/892838694898072084.jpg
+eval_033,eval_set/Clear_Skin/eval_033.jpg,Clear_Skin,I-III,manual_batch_1,orig:Clear_Skin/clean face.jpg
+eval_034,eval_set/Clear_Skin/eval_034.jpg,Clear_Skin,IV-VI,manual_batch_1,orig:Clear_Skin/www_pierredalcorso.jpg
+eval_035,eval_set/Clear_Skin/eval_035.jpg,Clear_Skin,I-III,manual_batch_1,"orig:Clear_Skin/Нейроконтент, эстетика, контент для бизнеса.jpg"
+eval_036,eval_set/Clear_Skin/eval_036.jpg,Clear_Skin,I-III,manual_batch_1,orig:Clear_Skin/𝖬𝗈𝖼𝗁𝗂𝗂 (@mochi__cosme) on X.jpg
+eval_037,eval_set/Hyperpigmentation/eval_037.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/1055599906612028.jpg
+eval_038,eval_set/Hyperpigmentation/eval_038.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/1266706141969322.jpg
+eval_039,eval_set/Hyperpigmentation/eval_039.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/14636767536904103.jpg
+eval_040,eval_set/Hyperpigmentation/eval_040.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/165014773843300345.jpg
+eval_041,eval_set/Hyperpigmentation/eval_041.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/318207529945158352.jpg
+eval_042,eval_set/Hyperpigmentation/eval_042.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/45317539997798822.jpg
+eval_043,eval_set/Hyperpigmentation/eval_043.jpg,Hyperpigmentation,I-III,manual_batch_1,orig:Hyperpigmentation/9640586697429911.jpg
+eval_044,eval_set/Hyperpigmentation/eval_044.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/Daily_ Dark Neck & Underarms Glow Together For You [#fuqx].jpg
+eval_045,eval_set/Hyperpigmentation/eval_045.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/IMG-20260723-WA0031.jpg
+eval_046,eval_set/Hyperpigmentation/eval_046.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/IMG-20260723-WA0034.jpg
+eval_047,eval_set/Hyperpigmentation/eval_047.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/IMG-20260723-WA0056.jpg
+eval_048,eval_set/Hyperpigmentation/eval_048.jpg,Hyperpigmentation,IV-VI,manual_batch_1,orig:Hyperpigmentation/Post inflammatory hyperpigmentation.jpg

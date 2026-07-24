@@ -1,0 +1,4 @@
+anthropic==0.119.0
+Pillow==12.2.0
+numpy==2.4.4
+tensorflow==2.21.0

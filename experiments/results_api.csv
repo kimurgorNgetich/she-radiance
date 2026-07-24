@@ -1,0 +1,913 @@
+image_id,model,prompt_version,true_label,fitzpatrick_bucket,pred_label,referral_flag,status,latency_ms,input_tokens,output_tokens,payload_kb,raw_json
+eval_001,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Severe,True,ok,3702.44,800,96,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple raised papules on cheek"", ""clustered inflammatory lesions"", ""some areas of dark post-inflammatory marks"", ""textured, uneven skin surface along jawline and cheek""]}"
+eval_002,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Severe,True,ok,3076.44,1358,101,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and pustules"", ""widespread distribution across cheek"", ""some lesions with central pustulation"", ""post-inflammatory erythema and dark marks"", ""cheek and jawline involvement""]}"
+eval_003,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Mild,True,ok,3050.2,1655,96,,"{""label"": ""Acne_Mild"", ""referral_flag"": true, ""visible_features"": [""scattered inflammatory papules on cheek"", ""some areas of post-inflammatory hyperpigmentation"", ""textured skin surface with small bumps"", ""no large nodules or cysts visible""]}"
+eval_004,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Severe,True,ok,2713.42,1115,92,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules and pustules on forehead"", ""erythema surrounding lesions"", ""widespread distribution across forehead"", ""some lesions with central crusting or excoriation""]}"
+eval_005,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Severe,True,ok,3496.53,1466,86,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed red papules and pustules"", ""clustered lesions on cheek"", ""surrounding erythema"", ""some lesions appear excoriated or crusted""]}"
+eval_006,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Severe,True,ok,4332.99,1556,124,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed red papules and pustules on cheek"", ""widespread redness and irritation across cheek and forehead"", ""some areas of dry, flaking skin texture"", ""lesions clustered densely over lower cheek area"", ""post-inflammatory erythema visible around active lesions""]}"
+eval_007,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Severe,True,ok,6097.42,1996,96,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules and pustules"", ""areas of post-inflammatory hyperpigmentation"", ""erythematous lesions clustered on cheek"", ""some crusting/scabbing present""]}"
+eval_008,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Severe,True,ok,2621.12,596,85,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflammatory papules and pustules"", ""erythema across cheeks and forehead"", ""lesions with crusting"", ""distribution across multiple facial zones""]}"
+eval_009,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Mild,False,ok,3536.47,1358,101,,"{""label"": ""Acne_Mild"", ""referral_flag"": false, ""visible_features"": [""numerous small skin-colored bumps scattered across cheek"", ""texture consistent with closed comedones or small papules"", ""no significant redness or large inflamed lesions"", ""even skin tone without significant discoloration""]}"
+eval_010,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Mild,False,ok,2689.55,581,85,,"{""label"": ""Acne_Mild"", ""referral_flag"": false, ""visible_features"": [""multiple small red papules"", ""scattered inflammatory bumps on cheek"", ""some post-inflammatory red marks"", ""no large cysts or nodules visible""]}"
+eval_011,claude-sonnet-5,1,Acne_Mild,IV-VI,Acne_Severe,True,ok,2719.67,485,108,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflammatory papules and pustules"", ""widespread distribution across cheek"", ""post-inflammatory hyperpigmentation and dark spots"", ""some areas with clustered lesions"", ""erythema surrounding active lesions""]}"
+eval_012,claude-sonnet-5,1,Acne_Mild,I-III,Acne_Mild,False,ok,4129.51,1682,95,,"{""label"": ""Acne_Mild"", ""referral_flag"": false, ""visible_features"": [""scattered inflammatory papules"", ""one pustule with visible whitehead"", ""mild surrounding erythema"", ""enlarged visible pores"", ""no widespread cystic lesions or scarring""]}"
+eval_013,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,3345.28,1358,98,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules and pustules"", ""clustered erythematous lesions on cheek"", ""areas of active redness and possible excoriation"", ""concentrated involvement over a localized region of the cheek""]}"
+eval_014,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,3208.36,1582,118,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed erythematous papules and lesions"", ""areas of broken/excoriated skin with erosions"", ""widespread involvement across the cheek"", ""some crusting and possible active bleeding points"", ""erythema surrounding lesions suggesting inflammation""]}"
+eval_015,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,2845.65,1655,111,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and pustules across forehead and cheeks"", ""areas of confluent redness and irritation"", ""post-inflammatory erythema and hyperpigmented macules"", ""widespread distribution affecting multiple facial zones""]}"
+eval_016,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,3088.31,1358,101,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflammatory papules and pustules"", ""widespread redness/erythema across cheeks and forehead"", ""some lesions with crusting or excoriation"", ""dense clustering of lesions on both cheeks""]}"
+eval_017,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,2742.19,1115,92,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and pustules"", ""widespread redness and erythema across cheek"", ""some lesions with visible pus/crusting"", ""clustered distribution covering large facial area""]}"
+eval_018,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,2703.34,932,123,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous papules and pustules across forehead"", ""widespread inflammatory lesions on cheeks and nose"", ""some lesions with whitish/yellow centers suggesting pustules"", ""diffuse distribution covering most of face"", ""post-inflammatory erythema and discoloration""]}"
+eval_019,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,3857.71,1676,113,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflammatory papules and pustules across forehead and cheeks"", ""widespread active lesions with erythema"", ""post-inflammatory hyperpigmentation and scarring"", ""dense distribution covering most of the face"", ""oily skin texture""]}"
+eval_020,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,3485.71,1079,103,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflammatory papules and pustules"", ""dense involvement of forehead, cheeks, and chin"", ""some areas of post-inflammatory hyperpigmentation"", ""excoriations and surface scaling present""]}"
+eval_021,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,3200.79,1780,128,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous raised inflammatory papules and pustules covering cheek"", ""widespread involvement across jawline and cheek area"", ""surrounding erythema (redness) of skin"", ""some lesions appear excoriated or crusted"", ""dense clustering suggestive of severe/nodulocystic acne""]}"
+eval_022,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,4068.32,958,122,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous raised papules across forehead and cheeks"", ""widespread textural irregularity and bumps"", ""areas of dark spots consistent with post-inflammatory hyperpigmentation"", ""shiny/oily skin surface"", ""dense clustering of lesions across most of the face""]}"
+eval_023,claude-sonnet-5,1,Acne_Severe,IV-VI,Acne_Severe,True,ok,2897.22,1256,101,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and pustules"", ""widespread erythema and redness"", ""clustered lesions across cheek"", ""some areas with post-inflammatory dark marks"", ""dense concentration of active breakouts""]}"
+eval_024,claude-sonnet-5,1,Acne_Severe,I-III,Acne_Severe,True,ok,3382.18,1099,96,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflammatory papules and pustules"", ""diffuse facial redness"", ""extensive involvement of forehead, cheeks, and chin"", ""excoriations and areas of skin breakdown""]}"
+eval_025,claude-sonnet-5,1,Clear_Skin,I-III,Clear_Skin,False,ok,3459.46,1628,77,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""natural rosy flush on cheek"", ""no visible acne lesions"", ""even skin tone with slight redness""]}"
+eval_026,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,3106.96,1358,84,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth even skin texture"", ""no visible acne lesions"", ""slight facial shine consistent with skincare product"", ""even skin tone with no notable dark spots""]}"
+eval_027,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,3412.48,1331,121,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""skin appears smooth with no visible acne lesions"", ""even skin tone with dewy/highlighted texture from lighting"", ""no significant discoloration or hyperpigmented patches"", ""some shine visible due to skin oil or makeup highlighter rather than a skin condition""]}"
+eval_028,claude-sonnet-5,1,Clear_Skin,I-III,Uncertain_Refer,True,ok,3120.21,1461,93,,"{""label"": ""Uncertain_Refer"", ""referral_flag"": true, ""visible_features"": [""extreme close-up limits context"", ""textured skin with fine bumps around mouth and chin"", ""no clear pustules or cysts visible"", ""image too close/blurry for confident classification""]}"
+eval_029,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,2891.5,1461,77,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""no visible lesions or blemishes"", ""natural facial shine consistent with lighting""]}"
+eval_030,claude-sonnet-5,1,Clear_Skin,I-III,Clear_Skin,False,ok,2918.8,1246,101,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture with dewy sheen"", ""no visible acne lesions or breakouts"", ""even skin tone with slight natural glow"", ""closed eye and hand resting on forehead, likely skincare application context""]}"
+eval_031,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,5206.98,1270,89,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth even skin texture"", ""no visible acne lesions"", ""no significant hyperpigmentation patches"", ""natural facial sheen consistent with skin healthy appearance""]}"
+eval_032,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,2924.64,1466,95,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""visible sheen from moisturizer or oil"", ""no visible acne lesions or significant pigmentation irregularities"", ""close-up angle with headband holding back hair""]}"
+eval_033,claude-sonnet-5,1,Clear_Skin,I-III,Clear_Skin,False,ok,5997.07,1169,92,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""even skin tone with slight highlight/sheen"", ""no visible acne lesions"", ""small mole near mouth"", ""no significant pigmentation irregularities""]}"
+eval_034,claude-sonnet-5,1,Clear_Skin,IV-VI,Clear_Skin,False,ok,2765.47,1466,102,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture with visible natural sheen"", ""no visible lesions, papules, or pustules"", ""even skin tone across visible forehead and cheek area"", ""extreme close-up crop limits full facial assessment""]}"
+eval_035,claude-sonnet-5,1,Clear_Skin,I-III,Clear_Skin,False,ok,2850.16,1358,91,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""visible pores with no active lesions"", ""even skin tone with mild texture"", ""no significant papules, pustules, or comedones"", ""a few small freckles/marks on cheek and nose""]}"
+eval_036,claude-sonnet-5,1,Clear_Skin,I-III,Clear_Skin,False,ok,2636.04,760,81,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""visible pores with some texture"", ""even skin tone"", ""slight shine indicating oiliness"", ""no significant acne lesions or pigmentation observed""]}"
+eval_037,claude-sonnet-5,1,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,3260.81,1250,120,,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""numerous small brown pigmented spots across cheeks, nose, and forehead"", ""freckle-like macules consistent with sun-related pigmentation"", ""no significant papules, pustules, or nodules suggestive of active acne"", ""even skin texture without inflammation""]}"
+eval_038,claude-sonnet-5,1,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,2533.49,1142,90,,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""dense freckling across cheeks and nose"", ""widespread small brown macules"", ""no visible inflammatory lesions or pustules"", ""even skin texture without raised bumps""]}"
+eval_039,claude-sonnet-5,1,Hyperpigmentation,I-III,Clear_Skin,False,ok,2935.34,1655,81,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""prominent freckles across nose and cheeks"", ""no active acne lesions visible"", ""even skin texture"", ""natural facial pigmentation pattern""]}"
+eval_040,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2691.79,1358,101,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflammatory papules and pustules across cheek and jawline"", ""widespread post-inflammatory hyperpigmentation"", ""active lesions with erythema"", ""dense distribution covering most of lower face""]}"
+eval_041,claude-sonnet-5,1,Hyperpigmentation,I-III,Clear_Skin,False,ok,3197.92,1574,85,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""visible freckles across cheeks and nose"", ""even skin texture"", ""no active acne lesions visible"", ""natural sun exposure highlighting freckling pattern""]}"
+eval_042,claude-sonnet-5,1,Hyperpigmentation,I-III,Acne_Severe,True,ok,2778.43,1250,97,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous papules and inflamed lesions across cheeks and forehead"", ""widespread dark post-inflammatory marks"", ""dense distribution covering most of face"", ""textured, uneven skin surface""]}"
+eval_043,claude-sonnet-5,1,Hyperpigmentation,I-III,Clear_Skin,False,ok,3392.67,1304,89,,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""numerous freckles across cheeks and nose"", ""even skin tone with natural pigmentation"", ""no visible acne lesions or active breakouts"", ""smooth skin texture""]}"
+eval_044,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2876.92,1062,98,,"{""label"": ""Hyperpigmentation"", ""referral_flag"": true, ""visible_features"": [""darkened skin around the under-eye and cheek area"", ""shadowed pigmentation extending toward the nose"", ""no visible pustules or comedones"", ""close-up angle limits full facial assessment""]}"
+eval_045,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2508.78,944,95,,"{""label"": ""Hyperpigmentation"", ""referral_flag"": true, ""visible_features"": [""dark discolored patches on cheek and jawline"", ""areas of post-inflammatory pigment changes"", ""scattered small papules and bumps"", ""uneven skin tone with darker macules""]}"
+eval_046,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,3906.45,1781,111,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous active inflammatory papules and pustules"", ""widespread dark post-inflammatory hyperpigmentation"", ""dense clustering of lesions on cheek and jawline"", ""extension of lesions onto neck"", ""scattered comedones""]}"
+eval_047,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,3572.88,1982,122,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and nodules"", ""widespread distribution across forehead and cheek"", ""post-inflammatory hyperpigmentation surrounding lesions"", ""some lesions with crusting or pustulation"", ""dense clustering suggesting nodulocystic acne""]}"
+eval_048,claude-sonnet-5,1,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2704.23,526,94,,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflammatory papules and pustules"", ""widespread distribution across cheek and jawline"", ""post-inflammatory hyperpigmented macules"", ""dense clustering of lesions""]}"
+eval_001,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,2603.14,695,86,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and jaw area"", ""widespread distribution suggesting moderate to severe acne"", ""visible erythema and inflammation"", ""lesions appear to extend across significant facial surface area""]
+}
+```"
+eval_002,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,2560.85,1253,83,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""multiple small papules distributed across cheek and jaw area"", ""inflammatory lesions consistent with mild acne"", ""no severe nodules or cystic formations"", ""relatively clear skin between lesions""]
+}
+```"
+eval_003,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,1350.38,1550,80,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple small papules distributed across cheek and jawline"", ""post-inflammatory hyperpigmentation marks"", ""oily/shiny skin surface"", ""scattered comedonal lesions""]
+}
+```"
+eval_004,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,1852.01,1010,82,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous inflammatory papules across forehead"", ""widespread distribution of lesions"", ""multiple red/pink colored bumps indicating active inflammation"", ""high density of lesions suggesting moderate to severe acne""]
+}
+```"
+eval_005,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,2378.4,1361,80,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""multiple small erythematous papules on cheek"", ""scattered inflammatory lesions"", ""no severe nodules or cystic acne"", ""localized to cheek region""]
+}
+```"
+eval_006,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,3066.06,1451,85,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and temple"", ""widespread distribution suggesting moderate to severe acne"", ""erythema and post-inflammatory marks"", ""dense clustering of lesions on lateral face""]
+}
+```"
+eval_007,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,2338.69,1845,95,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""multiple small papules distributed across cheek and jaw area"", ""inflammatory lesions with reddish/purplish coloration"", ""lesions appear superficial without severe cystic involvement"", ""overall skin texture shows acneic changes but not extensive""]
+}
+```"
+eval_008,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,2079.42,491,86,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": true,
+  ""visible_features"": [""scattered erythematous papules across forehead and cheeks"", ""mild inflammatory lesions"", ""some post-inflammatory erythema"", ""generally distributed acne without severe nodular or cystic components""]
+}
+```"
+eval_009,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,1756.83,1253,77,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": true,
+  ""visible_features"": [""small papules scattered across cheek and temple area"", ""visible comedones on facial surface"", ""mild inflammatory appearance"", ""perspiration present which may obscure full assessment""]
+}
+```"
+eval_010,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,1462.36,476,83,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""multiple small erythematous papules distributed across cheek"", ""some pustules with mild inflammation"", ""no severe nodules or cystic lesions"", ""overall mild inflammatory acne presentation""]
+}
+```"
+eval_011,claude-haiku-4-5,1,Acne_Mild,IV-VI,,,parse_error,1626.38,380,85,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""multiple small papules and pustules distributed across cheek area"", ""post-inflammatory hyperpigmentation marks"", ""scattered comedonal lesions"", ""no signs of severe inflammation or cystic acne""]
+}
+```"
+eval_012,claude-haiku-4-5,1,Acne_Mild,I-III,,,parse_error,2082.93,1577,91,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple small pustules and papules on cheek"", ""some pustules with whitehead appearance"", ""scattered erythematous lesions"", ""generally clear skin with localized acne involvement"", ""possible post-inflammatory erythema""]
+}
+```"
+eval_013,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,1505.76,1253,86,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and jawline"", ""widespread distribution suggesting moderate to severe acne"", ""erythema and edema around lesions"", ""clustering of lesions in concentrated area""]
+}
+```"
+eval_014,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,2345.54,1477,96,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and temple area"", ""widespread distribution of lesions"", ""erythema and edema surrounding lesions"", ""some lesions appear to have purulent centers"", ""significant facial involvement suggesting moderate to severe acne""]
+}
+```"
+eval_015,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,2025.64,1550,83,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules and pustules across forehead and cheeks"", ""widespread erythema and skin inflammation"", ""multiple lesions with signs of active infection"", ""significant facial involvement requiring clinical evaluation""]
+}
+```"
+eval_016,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,2032.92,1253,98,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules and pustules across forehead and cheeks"", ""widespread distribution affecting multiple facial zones"", ""significant erythema and skin inflammation"", ""notable post-inflammatory hyperpigmentation"", ""dense clustering of lesions suggesting moderate-to-severe acne""]
+}
+```"
+eval_017,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,4911.22,1010,95,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and jawline"", ""widespread distribution indicating moderate to severe acne"", ""erythema and edema surrounding lesions"", ""possible post-inflammatory hyperpigmentation"", ""clinical severity warrants professional evaluation""]
+}
+```"
+eval_018,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,3371.84,827,103,,"```json
+{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive white/pale scaling across forehead and scalp"", ""possible inflammatory or infectious process"", ""unclear etiology requiring clinical assessment"", ""potential systemic or dermatological condition"", ""image quality and lighting adequate but condition does not clearly match acne, hyperpigmentation, or clear skin categories""]
+}
+```"
+eval_019,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,1783.7,1571,88,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules and pustules across forehead and cheeks"", ""widespread distribution affecting multiple facial zones"", ""significant erythema and skin inflammation"", ""appearance consistent with moderate-to-severe acne vulgaris""]
+}
+```"
+eval_020,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,1675.9,974,90,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal and inflammatory lesions across forehead"", ""widespread papules and pustules on facial surface"", ""significant distribution of acne affecting large facial area"", ""appearance consistent with moderate-to-severe acne vulgaris""]
+}
+```"
+eval_021,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,1829.43,1675,103,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal and inflammatory lesions across cheek and lower face"", ""significant erythema and post-inflammatory hyperpigmentation"", ""dense distribution of papules and pustules"", ""notable skin texture irregularity"", ""widespread involvement suggesting moderate-to-severe acne vulgaris""]
+}
+```"
+eval_022,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,1712.66,853,88,,"```json
+{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""uneven skin tone with lighter patches on forehead and cheeks"", ""areas of depigmentation visible on face"", ""contrast between pigmented and depigmented regions"", ""possible vitiligo or similar depigmentation condition""]
+}
+```"
+eval_023,claude-haiku-4-5,1,Acne_Severe,IV-VI,,,parse_error,1841.64,1151,83,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules and pustules across cheek and temple"", ""widespread erythema and edema"", ""confluent lesion distribution indicating severe acne"", ""significant facial involvement requiring clinical evaluation""]
+}
+```"
+eval_024,claude-haiku-4-5,1,Acne_Severe,I-III,,,parse_error,1915.21,994,94,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules and pustules across forehead"", ""widespread comedonal acne on cheeks and chin"", ""significant facial erythema and inflammation"", ""dense distribution of lesions covering large facial surface area"", ""clinical severity warrants professional evaluation""]
+}
+```"
+eval_025,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1904.68,1523,79,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules on cheek"", ""mild erythema in affected areas"", ""otherwise clear skin with good complexion"", ""no severe inflammation or cystic lesions""]
+}
+```"
+eval_026,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,1354.51,1253,63,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""no visible acne lesions"", ""even skin tone"", ""minimal blemishes""]
+}
+```"
+eval_027,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,2012.53,1226,66,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""no visible acne lesions"", ""even skin tone"", ""no significant hyperpigmentation patches""]
+}
+```"
+eval_028,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1974.96,1356,94,,"```json
+{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""close-up macro photography of lip/oral tissue"", ""granular texture visible on surface"", ""image quality and angle make skin condition classification ambiguous"", ""unclear if this is pathological finding or normal anatomical variation"", ""insufficient context for confident categorization""]
+}
+```"
+eval_029,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,1489.88,1356,71,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""no visible acne lesions"", ""no signs of hyperpigmentation"", ""healthy skin appearance""]
+}
+```"
+eval_030,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1789.96,1141,69,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""no visible acne lesions"", ""even skin tone"", ""healthy skin appearance"", ""minimal visible blemishes""]
+}
+```"
+eval_031,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,2080.51,1165,70,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""no visible acne lesions"", ""no signs of hyperpigmentation or depigmentation""]
+}
+```"
+eval_032,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,1473.05,1361,77,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin surface"", ""no visible acne lesions"", ""no inflammatory papules or pustules"", ""even skin tone"", ""glossy appearance consistent with moisture/perspiration""]
+}
+```"
+eval_033,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1334.57,1064,69,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""no visible acne lesions"", ""no significant hyperpigmentation"", ""healthy appearance""]
+}
+```"
+eval_034,claude-haiku-4-5,1,Clear_Skin,IV-VI,,,parse_error,1390.67,1361,73,,"```json
+{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""no visible acne lesions"", ""even skin tone"", ""healthy skin appearance"", ""glossy appearance consistent with moisture/perspiration""]
+}
+```"
+eval_035,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1595.53,1253,70,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""small comedones and papules on cheek"", ""scattered mild inflammatory lesions"", ""otherwise clear skin with normal texture in surrounding areas""]
+}
+```"
+eval_036,claude-haiku-4-5,1,Clear_Skin,I-III,,,parse_error,1448.01,655,74,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""small comedones scattered across cheek area"", ""slightly textured skin surface"", ""minimal inflammation"", ""no severe pustules or cystic lesions""]
+}
+```"
+eval_037,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1596.81,1145,85,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne across facial surface"", ""numerous papules and pustules"", ""significant inflammatory response"", ""widespread distribution suggesting moderate to severe acne vulgaris"", ""clinical evaluation recommended for treatment planning""]
+}
+```"
+eval_038,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1838.02,1037,93,,"```json
+{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous brown macules distributed across cheek and temple"", ""freckle-like pattern consistent with solar lentigines or ephelides"", ""relatively uniform distribution suggesting sun exposure-related pigmentation"", ""no active inflammatory lesions or comedones visible""]
+}
+```"
+eval_039,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1925.39,1550,87,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": true,
+  ""visible_features"": [""scattered comedones and papules across cheeks and forehead"", ""post-inflammatory hyperpigmentation spots"", ""generally distributed inflammatory lesions consistent with mild acne"", ""some areas of skin texture irregularity""]
+}
+```"
+eval_040,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,2053.5,1253,93,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across cheek and jawline"", ""extensive post-inflammatory hyperpigmentation and scarring"", ""widespread distribution suggesting chronic or active severe acne"", ""mixed lesion morphology indicating different stages of acne""]
+}
+```"
+eval_041,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1573.84,1469,77,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules on cheeks and forehead"", ""mild erythema"", ""some post-inflammatory hyperpigmentation spots"", ""overall skin texture relatively preserved""]
+}
+```"
+eval_042,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1693.07,1145,85,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous inflammatory papules and pustules across face"", ""widespread distribution on cheeks and forehead"", ""significant facial involvement suggesting moderate-to-severe acne"", ""multiple lesions indicating need for clinical evaluation""]
+}
+```"
+eval_043,claude-haiku-4-5,1,Hyperpigmentation,I-III,,,parse_error,1446.8,1199,77,,"```json
+{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones across forehead and cheeks"", ""mild inflammatory papules"", ""overall skin texture relatively preserved"", ""no severe nodular or cystic lesions""]
+}
+```"
+eval_044,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,1665.93,957,75,,"```json
+{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""darker pigmentation in lower facial area"", ""uneven skin tone distribution"", ""possible post-inflammatory hyperpigmentation"", ""limited image clarity for definitive assessment""]
+}
+```"
+eval_045,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,1682.99,839,85,,"```json
+{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""irregular dark patches on cheek and jaw area"", ""uneven skin tone distribution"", ""darker discoloration on lower face and neck region"", ""possible post-inflammatory hyperpigmentation or melasma pattern""]
+}
+```"
+eval_046,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,1720.02,1676,88,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous inflammatory papules and pustules across cheek and jaw"", ""widespread distribution suggesting moderate to severe acne"", ""mixed lesion types including comedones and inflamed bumps"", ""significant facial involvement warranting clinical evaluation""]
+}
+```"
+eval_047,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,2174.07,1839,79,,"```json
+{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules and pustules across forehead and face"", ""widespread distribution of lesions"", ""signs of inflammation and possible scarring"", ""extensive facial involvement requiring clinical evaluation""]
+}
+```"
+eval_048,claude-haiku-4-5,1,Hyperpigmentation,IV-VI,,,parse_error,1760.92,421,83,,"```json
+{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread dark patches and discoloration across cheek and facial area"", ""uneven skin tone with areas of increased melanin"", ""pattern consistent with post-inflammatory hyperpigmentation or melasma""]
+}
+```"
+eval_001,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,2289.65,756,53,68.64,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""extensive facial involvement"", ""possible post-inflammatory changes""]
+}"
+eval_002,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1795.82,1314,53,94.18,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""mild facial acne"", ""distributed across cheek""]
+}"
+eval_003,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1397.32,1119,54,109.74,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""mild post-inflammatory marks"", ""oily skin appearance""]
+}"
+eval_004,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1142.68,1071,54,64.14,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered red papules forehead"", ""mild inflammatory lesions"", ""otherwise clear skin""]
+}"
+eval_005,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1405.7,1267,61,101.5,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Multiple small papules on cheek"", ""Mild erythema and inflammation"", ""Scattered comedonal lesions""]
+}"
+eval_006,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1390.32,1156,57,108.57,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered red papules cheeks"", ""post-inflammatory erythema"", ""mild comedonal distribution""]
+}"
+eval_007,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1538.34,1378,59,98.68,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules on cheek"", ""post-inflammatory hyperpigmentation marks"", ""mild comedonal distribution""]
+}"
+eval_008,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1134.45,552,57,50.45,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules on cheeks"", ""mild facial erythema"", ""some post-inflammatory marks""]
+}"
+eval_009,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1565.68,1314,56,172.96,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Small papules on cheek"", ""Oily skin appearance"", ""Scattered comedones""]
+}"
+eval_010,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1757.38,537,54,22.23,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""mild erythema"", ""comedonal lesions present""]
+}"
+eval_011,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1555.37,441,59,16.02,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules and pustules"", ""post-inflammatory hyperpigmentation marks"", ""oily skin texture""]
+}"
+eval_012,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1283.69,1119,58,145.59,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Multiple small papules present"", ""Some pustules with whitehead"", ""Mild facial erythema""]
+}"
+eval_013,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2983.71,1314,55,109.02,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""widespread distribution on cheek"", ""nodular lesions present""]
+}"
+eval_014,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1193.39,1119,56,110.17,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""pustules with erythema"", ""widespread distribution on cheek""]
+}"
+eval_015,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1402.05,1119,57,119.45,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread inflammatory papules"", ""forehead and cheek involvement"", ""post-inflammatory erythema""]
+}"
+eval_016,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1644.08,1314,55,85.15,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread inflammatory papules"", ""significant facial distribution"", ""erythema and active lesions""]
+}"
+eval_017,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1116.22,1071,55,72.85,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""widespread cheek involvement"", ""post-inflammatory erythema""]
+}"
+eval_018,claude-haiku-4-5,2,Acne_Severe,IV-VI,Uncertain_Refer,True,ok,1527.27,888,55,67.02,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Multiple papules on forehead"", ""Possible inflammatory skin condition"", ""Requires clinical evaluation""]
+}"
+eval_019,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1384.1,1341,52,167.16,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread comedonal distribution"", ""significant facial involvement""]
+}"
+eval_020,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1636.05,1035,59,98.65,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne forehead"", ""inflammatory papules across face"", ""significant skin texture irregularity""]
+}"
+eval_021,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1525.02,1452,53,130.24,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous inflammatory papules"", ""extensive facial distribution"", ""significant erythema present""]
+}"
+eval_022,claude-haiku-4-5,2,Acne_Severe,IV-VI,Hyperpigmentation,True,ok,1341.3,914,58,152.48,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""uneven skin tone distribution"", ""forehead hyperpigmentation patches"", ""generalized facial discoloration""]
+}"
+eval_023,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2202.63,1212,54,102.71,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread pustules and lesions"", ""significant facial involvement""]
+}"
+eval_024,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1371.17,1055,56,101.74,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread distribution across face"", ""significant erythema and congestion""]
+}"
+eval_025,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1494.56,1156,50,102.29,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""fair complexion"", ""minimal visible blemishes"", ""healthy skin appearance""]
+}"
+eval_026,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1286.71,1314,50,74.73,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_027,claude-haiku-4-5,2,Clear_Skin,IV-VI,Hyperpigmentation,True,ok,1236.96,1287,58,111.92,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""uneven skin tone distribution"", ""darker patches on forehead"", ""periorbital hyperpigmentation present""]
+}"
+eval_028,claude-haiku-4-5,2,Clear_Skin,I-III,Acne_Mild,False,ok,3242.75,1119,56,103.32,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Small papules on lips"", ""Mild inflammation present"", ""Localized to lip area""]
+}"
+eval_029,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1454.89,1119,48,104.56,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""healthy complexion""]
+}"
+eval_030,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1735.26,971,50,97.74,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_031,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1284.96,1226,48,106.38,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""healthy complexion""]
+}"
+eval_032,claude-haiku-4-5,2,Clear_Skin,IV-VI,Uncertain_Refer,True,ok,1413.58,1267,58,141.88,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Image quality and angle unclear"", ""Excessive moisture/gloss obscures detail"", ""Requires clinical examination""]
+}"
+eval_033,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1082.2,1125,50,41.66,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_034,claude-haiku-4-5,2,Clear_Skin,IV-VI,Uncertain_Refer,True,ok,1590.94,1267,54,176.57,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""excessive shine/moisture on skin"", ""partial face visibility"", ""lighting obscures clear assessment""]
+}"
+eval_035,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,2150.4,1314,53,150.13,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Normal skin texture and pores"", ""Even skin tone"", ""No active lesions visible""]
+}"
+eval_036,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1864.65,716,50,65.05,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_037,claude-haiku-4-5,2,Hyperpigmentation,I-III,Uncertain_Refer,True,ok,1309.48,1206,59,76.55,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Lip swelling or inflammation"", ""Facial freckles/pigmentation"", ""Unclear condition etiology""]
+}"
+eval_038,claude-haiku-4-5,2,Hyperpigmentation,I-III,Hyperpigmentation,True,ok,1574.36,1098,56,98.13,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread freckles and pigmentation"", ""even skin texture distribution"", ""multiple brown spots across face""]
+}"
+eval_039,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,1199.27,1119,60,143.96,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones and papules"", ""mild facial acne distribution"", ""freckles and post-inflammatory marks""]
+}"
+eval_040,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2534.41,1314,57,187.02,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple dark spots/patches"", ""uneven skin tone"", ""post-inflammatory hyperpigmentation pattern""]
+}"
+eval_041,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,1277.93,1156,60,179.12,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones on cheeks"", ""mild facial erythema"", ""freckles and post-inflammatory marks""]
+}"
+eval_042,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Severe,True,ok,1440.26,1206,58,85.99,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne distribution"", ""significant post-inflammatory hyperpigmentation"", ""widespread facial involvement""]
+}"
+eval_043,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,1265.52,1260,58,136.14,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones on cheeks"", ""mild inflammatory papules"", ""freckles and natural pigmentation""]
+}"
+eval_044,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1514.42,1018,54,89.32,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Dark pigmentation around mouth"", ""Uneven skin tone"", ""Textured appearance""]
+}"
+eval_045,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1343.16,900,56,36.83,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Dark patches on cheek"", ""Uneven skin tone"", ""Possible post-inflammatory changes""]
+}"
+eval_046,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,1641.42,1304,56,153.54,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne distribution"", ""inflammatory papules and pustules"", ""significant facial involvement""]
+}"
+eval_047,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1408.45,1600,56,314.32,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""irregular dark patches"", ""post-inflammatory hyperpigmentation"", ""scattered papules/lesions""]
+}"
+eval_048,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1362.37,482,52,25.31,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread dark patches"", ""uneven skin tone"", ""possible post-inflammatory changes""]
+}"
+eval_001,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,4206.98,878,64,68.64,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""raised inflamed papules"", ""cheek lesions clustered"", ""scarring and dark marks""]}"
+eval_002,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,3636.11,1436,69,94.18,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules"", ""widespread cheek involvement"", ""some post-inflammatory dark marks""]}"
+eval_003,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Mild,True,ok,2612.19,1241,60,109.74,"{""label"": ""Acne_Mild"", ""referral_flag"": true, ""visible_features"": [""small papules on cheek"", ""post-acne dark marks"", ""textured skin surface""]}"
+eval_004,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,2870.7,1193,64,64.14,"{""label"": ""Acne_Mild"", ""referral_flag"": false, ""visible_features"": [""scattered papules on forehead"", ""few inflamed red bumps"", ""mild acne distribution""]}"
+eval_005,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Severe,True,ok,2417.13,1389,66,101.5,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""widespread redness on cheek"", ""raised pustules with erythema""]}"
+eval_006,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Severe,True,ok,3133.75,1278,65,108.57,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules"", ""widespread redness on cheek"", ""textured skin with lesions""]}"
+eval_007,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,2497.77,1500,65,98.68,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""dark spots/scarring"", ""widespread cheek involvement""]}"
+eval_008,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Severe,True,ok,3563.92,674,62,50.45,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflamed papules"", ""redness across cheeks"", ""forehead lesions present""]}"
+eval_009,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Mild,True,ok,2631.93,1436,58,172.96,"{""label"": ""Acne_Mild"", ""referral_flag"": true, ""visible_features"": [""small raised bumps"", ""scattered across cheek"", ""textured skin surface""]}"
+eval_010,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Severe,True,ok,2339.29,659,59,22.23,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""widespread redness"", ""scattered pustules""]}"
+eval_011,claude-sonnet-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,2288.64,563,64,16.02,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""dark post-acne marks"", ""widespread facial involvement""]}"
+eval_012,claude-sonnet-5,2,Acne_Mild,I-III,Acne_Severe,True,ok,4068.66,1241,63,145.59,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""pustule with visible pus"", ""widespread facial redness""]}"
+eval_013,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2321.42,1436,64,109.02,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""clustered inflamed papules"", ""erythema and redness"", ""concentrated cheek involvement""]}"
+eval_014,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2015.31,1241,64,110.17,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""erythema and redness"", ""clustered lesions on cheek""]}"
+eval_015,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2360.53,1241,70,119.45,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""Inflammatory papules on forehead"", ""Widespread redness and lesions"", ""Active acne on cheeks""]}"
+eval_016,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2942.1,1436,69,85.15,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflammatory papules"", ""redness across cheeks forehead"", ""multiple excoriated lesions""]}"
+eval_017,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,3585.88,1193,63,72.85,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules"", ""widespread cheek redness"", ""multiple pustules present""]}"
+eval_018,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,3389.72,1010,66,67.02,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous papules and pustules"", ""widespread forehead involvement"", ""possible scarring/nodules""]}"
+eval_019,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,3327.57,1463,66,167.16,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflammatory papules"", ""dark post-acne marks"", ""textured uneven skin surface""]}"
+eval_020,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2361.41,1157,69,98.65,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread papules and pustules"", ""forehead and cheek involvement"", ""post-inflammatory dark marks""]}"
+eval_021,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2567.98,1574,63,130.24,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflamed papules"", ""erythema and redness"", ""extensive cheek involvement""]}"
+eval_022,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2802.98,1036,61,152.48,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread facial papules"", ""textured inflamed skin"", ""scattered dark spots""]}"
+eval_023,claude-sonnet-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2258.51,1334,69,102.71,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules/pustules"", ""widespread redness and swelling"", ""scattered on cheek area""]}"
+eval_024,claude-sonnet-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2080.12,1177,68,101.74,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread inflamed papules"", ""redness across cheeks forehead"", ""clustered pustules with scarring""]}"
+eval_025,claude-sonnet-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,3072.9,1278,59,102.29,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""natural blush on cheek"", ""smooth skin texture"", ""no visible acne""]}"
+eval_026,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,2247.25,1436,63,74.73,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth even skin tone"", ""visible sheen or moisture"", ""no visible blemishes""]}"
+eval_027,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,3177.87,1409,63,111.92,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth even skin texture"", ""glossy dewy finish"", ""no visible acne lesions""]}"
+eval_028,claude-sonnet-5,2,Clear_Skin,I-III,Uncertain_Refer,True,ok,2925.84,1241,64,103.32,"{""label"": ""Uncertain_Refer"", ""referral_flag"": true, ""visible_features"": [""extreme close-up, low context"", ""textured skin surface"", ""small bumps around mouth""]}"
+eval_029,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,2718.35,1241,62,104.56,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""no visible acne lesions"", ""close-up partial face crop""]}"
+eval_030,claude-sonnet-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,3147.66,1093,62,97.74,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""natural glow/sheen"", ""no visible acne lesions""]}"
+eval_031,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,2270.65,1348,58,106.38,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""Smooth skin texture"", ""No visible acne"", ""Even skin tone""]}"
+eval_032,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,2494.3,1389,66,141.88,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""glossy/hydrated skin texture"", ""close-up angled photo"", ""no visible acne lesions""]}"
+eval_033,claude-sonnet-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,2568.4,1247,59,41.66,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""Smooth skin texture"", ""Small dark spot"", ""Even skin tone""]}"
+eval_034,claude-sonnet-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,2988.3,1389,58,176.57,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""no visible blemishes""]}"
+eval_035,claude-sonnet-5,2,Clear_Skin,I-III,Acne_Mild,False,ok,2343.7,1436,64,150.13,"{""label"": ""Acne_Mild"", ""referral_flag"": false, ""visible_features"": [""enlarged visible pores"", ""few scattered small marks"", ""mild skin texture unevenness""]}"
+eval_036,claude-sonnet-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1947.6,838,53,65.05,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""visible pores"", ""even skin tone"", ""no active lesions""]}"
+eval_037,claude-sonnet-5,2,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,2545.31,1328,65,76.55,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""widespread freckling"", ""brown pigmented spots"", ""sun-exposed facial skin""]}"
+eval_038,claude-sonnet-5,2,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,2257.83,1220,64,98.13,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""dense freckling across face"", ""even skin tone otherwise"", ""no active acne lesions""]}"
+eval_039,claude-sonnet-5,2,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,3848.75,1241,63,143.96,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""scattered facial freckles"", ""even skin tone otherwise"", ""no visible acne""]}"
+eval_040,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2520.45,1436,71,187.02,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""widespread post-acne hyperpigmentation"", ""active lesions on cheek""]}"
+eval_041,claude-sonnet-5,2,Hyperpigmentation,I-III,Hyperpigmentation,False,ok,2761.75,1278,70,179.12,"{""label"": ""Hyperpigmentation"", ""referral_flag"": false, ""visible_features"": [""freckles across cheeks and nose"", ""scattered brown facial spots"", ""even skin tone otherwise""]}"
+eval_042,claude-sonnet-5,2,Hyperpigmentation,I-III,Acne_Severe,True,ok,2454.35,1328,66,85.99,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""widespread facial papules"", ""dark post-acne marks"", ""dense forehead and cheek involvement""]}"
+eval_043,claude-sonnet-5,2,Hyperpigmentation,I-III,Clear_Skin,False,ok,2562.56,1382,58,136.14,"{""label"": ""Clear_Skin"", ""referral_flag"": false, ""visible_features"": [""scattered facial freckles"", ""even skin tone"", ""no active breakouts""]}"
+eval_044,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2369.63,1140,65,89.32,"{""label"": ""Hyperpigmentation"", ""referral_flag"": true, ""visible_features"": [""darkened skin under eye"", ""periorbital pigmentation"", ""uneven skin tone""]}"
+eval_045,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2770.43,1022,62,36.83,"{""label"": ""Hyperpigmentation"", ""referral_flag"": true, ""visible_features"": [""dark facial spots"", ""post-acne discoloration"", ""textured skin bumps""]}"
+eval_046,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2548.81,1426,67,153.54,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""multiple inflamed papules"", ""widespread dark spots"", ""post-acne hyperpigmentation""]}"
+eval_047,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2863.62,1722,71,314.32,"{""label"": ""Acne_Severe"", ""referral_flag"": true, ""visible_features"": [""numerous inflamed papules and nodules"", ""widespread facial involvement"", ""post-inflammatory dark spots""]}"
+eval_048,claude-sonnet-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2362.24,604,69,25.31,"{""label"": ""Hyperpigmentation"", ""referral_flag"": true, ""visible_features"": [""dark spots on cheek"", ""post-acne pigmentation marks"", ""scattered pigmented papules""]}"
+eval_001,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Severe,True,ok,3403.98,756,53,68.64,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""extensive facial involvement"", ""possible post-inflammatory changes""]
+}"
+eval_002,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1458.13,1314,52,94.18,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""mild facial acne"", ""otherwise clear skin""]
+}"
+eval_003,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1320.87,1119,57,109.74,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""post-inflammatory hyperpigmentation marks"", ""oily skin appearance""]
+}"
+eval_004,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1483.62,1071,54,64.14,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered red papules forehead"", ""mild inflammatory lesions"", ""otherwise clear skin""]
+}"
+eval_005,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1420.15,1267,59,101.5,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Multiple small papules cheeks"", ""Mild erythema on face"", ""Scattered inflammatory lesions""]
+}"
+eval_006,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1296.15,1156,57,108.57,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered red papules cheeks"", ""post-inflammatory erythema"", ""mild comedonal distribution""]
+}"
+eval_007,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,2076.66,1378,59,98.68,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules on cheek"", ""post-inflammatory hyperpigmentation marks"", ""otherwise clear skin base""]
+}"
+eval_008,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1352.85,552,57,50.45,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules on cheeks"", ""mild facial erythema"", ""some post-inflammatory marks""]
+}"
+eval_009,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1380.76,1314,56,172.96,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Small papules on cheek"", ""Oily skin appearance"", ""Scattered comedones""]
+}"
+eval_010,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1673.03,537,54,22.23,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered small papules"", ""mild erythema"", ""comedonal lesions present""]
+}"
+eval_011,claude-haiku-4-5,2,Acne_Mild,IV-VI,Acne_Mild,False,ok,1585.34,441,59,16.02,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered papules and pustules"", ""post-inflammatory hyperpigmentation marks"", ""oily skin texture""]
+}"
+eval_012,claude-haiku-4-5,2,Acne_Mild,I-III,Acne_Mild,False,ok,1386.28,1119,59,145.59,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Multiple small papules present"", ""Some pustules with whitehead"", ""Mild erythema and inflammation""]
+}"
+eval_013,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1418.21,1314,55,109.02,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""widespread distribution on cheek"", ""nodular lesions present""]
+}"
+eval_014,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1243.35,1119,56,110.17,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""pustules with erythema"", ""widespread distribution on cheek""]
+}"
+eval_015,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,1303.65,1119,57,119.45,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread inflammatory papules"", ""forehead and cheek involvement"", ""post-inflammatory erythema""]
+}"
+eval_016,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2158.23,1314,56,85.15,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread inflammatory papules"", ""significant facial distribution"", ""erythema and post-inflammatory marks""]
+}"
+eval_017,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,2858.93,1071,55,72.85,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple inflammatory papules"", ""widespread cheek involvement"", ""post-inflammatory erythema""]
+}"
+eval_018,claude-haiku-4-5,2,Acne_Severe,IV-VI,Uncertain_Refer,True,ok,1571.79,888,55,67.02,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Multiple papules on forehead"", ""Possible inflammatory skin condition"", ""Requires clinical evaluation""]
+}"
+eval_019,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1326.92,1341,52,167.16,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread comedonal distribution"", ""significant facial involvement""]
+}"
+eval_020,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1736.36,1035,59,98.65,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne forehead"", ""inflammatory papules across face"", ""significant skin texture irregularity""]
+}"
+eval_021,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,2691.47,1452,56,130.24,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""numerous inflammatory papules"", ""widespread distribution across face"", ""significant erythema and edema""]
+}"
+eval_022,claude-haiku-4-5,2,Acne_Severe,IV-VI,Hyperpigmentation,True,ok,1407.0,914,58,152.48,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""uneven skin tone distribution"", ""forehead hyperpigmentation patches"", ""generalized facial discoloration""]
+}"
+eval_023,claude-haiku-4-5,2,Acne_Severe,IV-VI,Acne_Severe,True,ok,1202.56,1212,54,102.71,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread pustules and lesions"", ""significant facial involvement""]
+}"
+eval_024,claude-haiku-4-5,2,Acne_Severe,I-III,Acne_Severe,True,ok,3597.0,1055,56,101.74,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive inflammatory papules"", ""widespread distribution across face"", ""significant erythema and congestion""]
+}"
+eval_025,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,979.88,1156,50,102.29,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""fair complexion"", ""minimal visible blemishes"", ""smooth skin texture""]
+}"
+eval_026,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1339.84,1314,50,74.73,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_027,claude-haiku-4-5,2,Clear_Skin,IV-VI,Hyperpigmentation,True,ok,1367.18,1287,58,111.92,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""uneven skin tone distribution"", ""darker patches on forehead"", ""periorbital hyperpigmentation present""]
+}"
+eval_028,claude-haiku-4-5,2,Clear_Skin,I-III,Acne_Mild,False,ok,1265.83,1119,55,103.32,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Small papules on lips"", ""Mild inflammation present"", ""Textured skin surface""]
+}"
+eval_029,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1407.63,1119,48,104.56,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""healthy complexion""]
+}"
+eval_030,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1260.52,971,50,97.74,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_031,claude-haiku-4-5,2,Clear_Skin,IV-VI,Clear_Skin,False,ok,1149.91,1226,48,106.38,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""even skin tone"", ""healthy complexion""]
+}"
+eval_032,claude-haiku-4-5,2,Clear_Skin,IV-VI,Uncertain_Refer,True,ok,2437.59,1267,58,141.88,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Image quality compromised by angle"", ""Excessive moisture/perspiration present"", ""Insufficient clear skin visualization""]
+}"
+eval_033,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1724.01,1125,50,41.66,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_034,claude-haiku-4-5,2,Clear_Skin,IV-VI,Uncertain_Refer,True,ok,2411.19,1267,54,176.57,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""excessive shine/moisture on skin"", ""partial face visibility"", ""lighting obscures clear assessment""]
+}"
+eval_035,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1597.06,1314,53,150.13,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""Normal skin texture and pores"", ""Even skin tone"", ""No active lesions visible""]
+}"
+eval_036,claude-haiku-4-5,2,Clear_Skin,I-III,Clear_Skin,False,ok,1702.29,716,50,65.05,"{
+  ""label"": ""Clear_Skin"",
+  ""referral_flag"": false,
+  ""visible_features"": [""smooth skin texture"", ""minimal visible blemishes"", ""even skin tone""]
+}"
+eval_037,claude-haiku-4-5,2,Hyperpigmentation,I-III,Uncertain_Refer,True,ok,1761.3,1206,59,76.55,"{
+  ""label"": ""Uncertain_Refer"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Lip swelling or inflammation"", ""Facial freckles/pigmentation"", ""Unclear condition etiology""]
+}"
+eval_038,claude-haiku-4-5,2,Hyperpigmentation,I-III,Hyperpigmentation,True,ok,2200.52,1098,59,98.13,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""widespread freckles and pigmentation"", ""fair complexion with sun damage"", ""scattered brown spots on cheeks""]
+}"
+eval_039,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,2476.16,1119,60,143.96,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones and papules"", ""mild facial acne distribution"", ""freckles and post-inflammatory marks""]
+}"
+eval_040,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,2177.03,1314,57,187.02,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""multiple dark spots/patches"", ""uneven skin tone"", ""post-inflammatory hyperpigmentation pattern""]
+}"
+eval_041,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,2827.75,1156,60,179.12,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones on cheeks"", ""mild facial erythema"", ""freckles and post-inflammatory marks""]
+}"
+eval_042,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Severe,True,ok,2113.33,1206,58,85.99,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne distribution"", ""significant post-inflammatory hyperpigmentation"", ""widespread facial involvement""]
+}"
+eval_043,claude-haiku-4-5,2,Hyperpigmentation,I-III,Acne_Mild,False,ok,2056.87,1260,58,136.14,"{
+  ""label"": ""Acne_Mild"",
+  ""referral_flag"": false,
+  ""visible_features"": [""scattered comedones on cheeks"", ""mild inflammatory papules"", ""freckles and natural pigmentation""]
+}"
+eval_044,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1774.04,1018,54,89.32,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Dark pigmentation around mouth"", ""Uneven skin tone"", ""Textured appearance""]
+}"
+eval_045,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1729.85,900,56,36.83,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""Dark patches on cheek"", ""Uneven skin tone"", ""Possible post-inflammatory changes""]
+}"
+eval_046,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Acne_Severe,True,ok,2404.66,1304,56,153.54,"{
+  ""label"": ""Acne_Severe"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive comedonal acne distribution"", ""inflammatory papules and pustules"", ""significant facial involvement""]
+}"
+eval_047,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,7301.78,1600,56,314.32,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""irregular dark patches"", ""post-inflammatory hyperpigmentation"", ""scattered papules/lesions""]
+}"
+eval_048,claude-haiku-4-5,2,Hyperpigmentation,IV-VI,Hyperpigmentation,True,ok,1237.19,482,52,25.31,"{
+  ""label"": ""Hyperpigmentation"",
+  ""referral_flag"": true,
+  ""visible_features"": [""extensive dark patches"", ""uneven skin tone"", ""possible post-inflammatory changes""]
+}"
