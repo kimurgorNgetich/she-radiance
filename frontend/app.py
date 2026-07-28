@@ -246,7 +246,7 @@ def render_brand_header():
 
 def render_footer():
     st.markdown(
-        '<div class="app-footer">She Radiance &nbsp;|&nbsp; Intelligent Dermatological Triage &nbsp;|&nbsp; 2026</div>',
+        '<div class="app-footer">Intelligent Dermatological Triage</div>',
         unsafe_allow_html=True,
     )
 
@@ -395,16 +395,13 @@ def render_screen_upload():
             st.session_state["app_stage"] = "results"
             st.rerun()
 
-def render_routine_table(routine: list):
+def render_routine_table(routine: list) -> str:
     rows_html = ""
     for item in routine:
         phase_badge = get_phase_badge(item.get("treatment_phase", ""))
         rows_html += f'<tr><td>{phase_badge}</td><td><strong>{item.get("active_compound", "")}</strong></td><td>{item.get("dermatological_logic", "")}</td></tr>'
 
-    st.markdown(
-        f'<table class="routine-table"><thead><tr><th>Phase</th><th>Active Compound</th><th>Mechanism of Action</th></tr></thead><tbody>{rows_html}</tbody></table>',
-        unsafe_allow_html=True
-    )
+    return f'<table class="routine-table"><thead><tr><th>Phase</th><th>Active Compound</th><th>Mechanism of Action</th></tr></thead><tbody>{rows_html}</tbody></table>'
 
 def render_visible_features(features: list):
     if not features:
@@ -425,14 +422,22 @@ def render_screen_results():
     status = routing_result.get("status")
 
     if status == "success":
-        st.markdown(f'<div class="banner banner-{display["banner_class"].split("-")[1]}"><p class="banner-title" style="color:{display["colour"]};">{display["title"]}</p></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="banner {display["banner_class"]}"><p class="banner-title" style="color:{display["colour"]};">{display["title"]}</p></div>', unsafe_allow_html=True)
         render_visible_features(visible_features)
 
-        st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown('<p class="section-heading" style="font-size: 1.1rem;">Formulated Regimen</p>', unsafe_allow_html=True)
-        if routing_result.get("routine"):
-            render_routine_table(routing_result["routine"])
-        st.markdown('</div>', unsafe_allow_html=True)
+        table_html = render_routine_table(routing_result["routine"]) if routing_result.get("routine") else ""
+        st.markdown(
+            '<div class="card">'
+            '<p class="section-heading" style="font-size: 1.1rem;">Formulated Regimen</p>'
+            '<p class="disclaimer" style="margin-top:0;">'
+            'The compounds below are active pharmaceutical ingredients, not commercial brand names &mdash; '
+            'look for over-the-counter products whose ingredient list contains them. '
+            'The Mechanism of Action column explains why each compound was selected for your profile.'
+            '</p>'
+            f'{table_html}'
+            '</div>',
+            unsafe_allow_html=True,
+        )
 
     elif status == "medical_redirect":
         st.markdown(f'<div class="banner banner-severe"><p class="banner-title" style="color:{display["colour"]};">{display["title"]}</p></div>', unsafe_allow_html=True)
