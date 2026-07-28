@@ -150,8 +150,8 @@ def main():
 
     for model in sorted({r["model"] for r in api_rows}):
         model_rows = [r for r in api_rows if r["model"] == model]
-        final_version = max(int(r["prompt_version"]) for r in model_rows)
-        final_rows = [r for r in model_rows if int(r["prompt_version"]) == final_version]
+        final_version = max(int(r["prompt_version"].lstrip("v")) for r in model_rows)
+        final_rows = [r for r in model_rows if int(r["prompt_version"].lstrip("v")) == final_version]
         section_text, by_bucket, p95_latency, statuses, total = api_model_section(model, final_rows)
         sections.append(section_text)
         sections.append(gate_verdict(model, by_bucket, local_by_bucket, p95_latency, statuses, total))
