@@ -483,8 +483,8 @@ def render_screen_results():
     elif status == "inconclusive":
         reason = routing_result.get("reason")
         if reason == "low_certainty":
-            copy = ("Our engine could not identify visible skin markers with sufficient certainty "
-                    "from this image. Please try again with a clearer, well-lit, unfiltered photograph.")
+            copy = ("Our engine identified possible markers but could not classify them with sufficient "
+                    "certainty. Please consult a professional, or try a clearer, well-lit photograph.")
         elif reason == "engine_error":
             copy = ("We were unable to complete this analysis due to a temporary processing issue. "
                     "Please try again shortly, or consult a dermatologist if the issue persists.")
