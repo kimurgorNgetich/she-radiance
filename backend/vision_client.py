@@ -6,13 +6,14 @@ resize/base64/prefill/fence-stripping logic validated in experiments/api_spike.p
 import base64
 import io
 import json
-import os
 import sys
 import time
 from pathlib import Path
 
 import anthropic
 from PIL import Image
+
+from config import get_secret
 
 BACKEND_DIR = Path(__file__).resolve().parent
 PROMPT_PATH = BACKEND_DIR / "prompt.txt"
@@ -102,7 +103,7 @@ def analyze_selfie(image_path: str, model: str = DEFAULT_MODEL) -> dict:
     """
     start = time.perf_counter()
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = get_secret("ANTHROPIC_API_KEY")
     if not api_key:
         return _fail_closed(model, (time.perf_counter() - start) * 1000, "auth_error")
 

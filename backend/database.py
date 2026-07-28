@@ -1,21 +1,22 @@
-import os
 import psycopg2
 from psycopg2 import OperationalError
-from pathlib import Path
-from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parent / ".env")
+from config import get_secret
 
 def create_connection():
     try:
         #Attempt connection
-        connection = psycopg2.connect(
-            database="she_radiance",
-            user="postgres",
-            password=os.getenv("DB_PASSWORD"),
-            host="127.0.0.1",
-            port="5432"
-        )
+        database_url = get_secret("DATABASE_URL")
+        if database_url:
+            connection = psycopg2.connect(database_url)
+        else:
+            connection = psycopg2.connect(
+                database=get_secret("DB_NAME", "she_radiance"),
+                user=get_secret("DB_USER", "postgres"),
+                password=get_secret("DB_PASSWORD"),
+                host=get_secret("DB_HOST", "127.0.0.1"),
+                port=get_secret("DB_PORT", "5432"),
+            )
         print("Connection to PostgreSQL database successful.")
         return connection
     

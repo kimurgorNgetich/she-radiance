@@ -5,6 +5,9 @@ env/
 # Environment Variables
 .env
 
+# Streamlit secrets (real values — never commit; see .streamlit/secrets.toml.example)
+.streamlit/secrets.toml
+
 # Python Cache
 __pycache__/
 *.pyc
@@ -15,3 +18,5 @@ AI_TRAINING_DATA/
 experiments/eval_set/
 experiments/raw_staging/
 experiments/data_reserve/
+debug_vision.py
+debug_vision.py
