@@ -58,6 +58,8 @@ except Exception as _model_err:
     MODEL_AVAILABLE = False
     _MODEL_ERROR_MSG = str(_model_err)
 
+from config import get_secret
+
 # Session-scoped cap on the number of vision-API analyses per user session.
 _MAX_ANALYSES_PER_SESSION = 20
 
@@ -258,6 +260,7 @@ def init_session_state():
         "vision_result": None,
         "app_stage": "consent",
         "analysis_count": 0,
+        "access_granted": False,
     }
     for key, value in defaults.items():
         if key not in st.session_state:
@@ -315,6 +318,39 @@ def get_condition_display(label: str) -> dict:
 # ===========================================================================
 # SCREEN RENDERERS
 # ===========================================================================
+def render_access_gate() -> bool:
+    """Shared access-code gate shown before the consent screen. Returns True if the
+    caller should proceed to render the normal flow (gate disabled or already passed)."""
+    access_code = get_secret("ACCESS_CODE")
+    if not access_code:
+        return True
+    if st.session_state.get("access_granted"):
+        return True
+
+    st.markdown(
+        """
+        <div class="card">
+            <p class="section-heading">Access Required</p>
+            <p style="color:#D1D1D1; font-weight:300; line-height:1.8; font-size:0.95rem;">
+                This preview is restricted. Please enter the access code to continue.
+            </p>
+        </div>
+        """, unsafe_allow_html=True
+    )
+
+    entered_code = st.text_input("Access code", type="password", label_visibility="collapsed")
+
+    if st.button("Enter"):
+        if entered_code == access_code:
+            st.session_state["access_granted"] = True
+            st.rerun()
+        else:
+            st.markdown(
+                '<p class="disclaimer">Incorrect access code.</p>',
+                unsafe_allow_html=True,
+            )
+    return False
+
 def render_screen_consent():
     st.markdown(
         """
@@ -475,7 +511,10 @@ def main():
     inject_global_css()
     init_session_state()
     render_brand_header()
-    
+
+    if not render_access_gate():
+        return
+
     stage = st.session_state.get("app_stage", "consent")
     if stage == "consent": render_screen_consent()
     elif stage == "upload": render_screen_upload()
