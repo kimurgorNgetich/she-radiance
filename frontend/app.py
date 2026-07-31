@@ -19,6 +19,7 @@ Ethics & Privacy:
     - DIAGNOSTIC_LOG records only condition label, referral flag, and timestamp.
 """
 
+import os
 import sys
 import html
 import tempfile
@@ -26,7 +27,7 @@ import datetime
 from pathlib import Path
 
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 
 # ---------------------------------------------------------------------------
 # Path setup
@@ -53,12 +54,11 @@ try:
     from vision_client import analyze_selfie
     from logic_router import route_from_vision
     from database import create_connection
+    from config import get_secret
     MODEL_AVAILABLE = True
 except Exception as _model_err:
     MODEL_AVAILABLE = False
     _MODEL_ERROR_MSG = str(_model_err)
-
-from config import get_secret
 
 # Session-scoped cap on the number of vision-API analyses per user session.
 _MAX_ANALYSES_PER_SESSION = 20
@@ -259,8 +259,12 @@ def init_session_state():
         "diagnosis_result": None,
         "vision_result": None,
         "app_stage": "consent",
+        "diagnosis_label": None,
         "analysis_count": 0,
         "access_granted": False,
+        "rotation_degrees": 0,
+        "last_image_key": None,
+        "image_source": "Upload a photo",
     }
     for key, value in defaults.items():
         if key not in st.session_state:
@@ -272,7 +276,11 @@ def reset_session():
     st.session_state["diagnosis_result"] = None
     st.session_state["vision_result"] = None
     st.session_state["app_stage"] = "consent"
-    # analysis_count is intentionally NOT reset: the cap applies per session.
+    st.session_state["diagnosis_label"] = None
+    st.session_state["rotation_degrees"] = 0
+    st.session_state["last_image_key"] = None
+    # analysis_count and access_granted are intentionally NOT reset here:
+    # the inference cap and the access gate apply for the whole session.
 
 def log_diagnosis_to_db(condition: str, referral_flag: bool):
     try:
@@ -288,13 +296,27 @@ def log_diagnosis_to_db(condition: str, referral_flag: bool):
     except Exception:
         pass
 
-def run_inference(uploaded_file):
+def apply_orientation(img: Image.Image) -> Image.Image:
+    """Auto-correct EXIF orientation, then apply any manual rotation the user
+    has chosen. Returns the exact image that is both previewed AND analysed,
+    so what the user sees is what the model sees."""
+    img = ImageOps.exif_transpose(img)
+    degrees = st.session_state.get("rotation_degrees", 0) % 360
+    if degrees == 90:
+        img = img.transpose(Image.ROTATE_270)   # 90 deg clockwise
+    elif degrees == 180:
+        img = img.transpose(Image.ROTATE_180)
+    elif degrees == 270:
+        img = img.transpose(Image.ROTATE_90)    # 270 deg clockwise
+    return img
+
+def run_inference(pil_image: Image.Image):
     with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
-        tmp.write(uploaded_file.getbuffer())
         tmp_path = Path(tmp.name)
+    pil_image.convert("RGB").save(tmp_path, format="JPEG", quality=92)
 
     try:
-        vision_result = analyze_selfie(tmp_path)
+        vision_result = analyze_selfie(str(tmp_path))
         routing_result = route_from_vision(vision_result)
     finally:
         if tmp_path.exists():
@@ -308,12 +330,12 @@ def get_phase_badge(phase: str) -> str:
 
 def get_condition_display(label: str) -> dict:
     mapping = {
-        "Acne_Mild": {"title": "Mild Acne Profile", "banner_class": "banner-acne", "colour": "#E8A838"},
-        "Hyperpigmentation": {"title": "Hyperpigmentation Profile", "banner_class": "banner-hyperpigmentation", "colour": "#9B59B6"},
-        "Clear_Skin": {"title": "Maintenance Profile", "banner_class": "banner-clear", "colour": "#4CAF6F"},
-        "Acne_Severe": {"title": "Severe Profile / Medical Review Recommended", "banner_class": "banner-severe", "colour": "#D64045"},
+        "Acne_Mild": {"title": "Mild Acne Profile", "banner_class": "acne", "colour": "#E8A838"},
+        "Hyperpigmentation": {"title": "Hyperpigmentation Profile", "banner_class": "hyperpigmentation", "colour": "#9B59B6"},
+        "Clear_Skin": {"title": "Maintenance Profile", "banner_class": "clear", "colour": "#4CAF6F"},
+        "Acne_Severe": {"title": "Severe Profile / Medical Review Recommended", "banner_class": "severe", "colour": "#D64045"},
     }
-    return mapping.get(label, {"title": label, "banner_class": "banner-inconclusive", "colour": "#A0A0A0"})
+    return mapping.get(label, {"title": label, "banner_class": "inconclusive", "colour": "#A0A0A0"})
 
 # ===========================================================================
 # SCREEN RENDERERS
@@ -338,17 +360,20 @@ def render_access_gate() -> bool:
         """, unsafe_allow_html=True
     )
 
-    entered_code = st.text_input("Access code", type="password", label_visibility="collapsed")
+    # Wrapped in st.form so Streamlit does not show its native
+    # "Press Enter to apply" hint on the bare text_input, and so the
+    # physical Enter key submits the form directly, same as clicking Enter.
+    with st.form("access_gate_form", clear_on_submit=False):
+        entered_code = st.text_input("Access code", type="password", label_visibility="collapsed")
+        submitted = st.form_submit_button("Enter")
 
-    if st.button("Enter"):
+    if submitted:
         if entered_code == access_code:
             st.session_state["access_granted"] = True
             st.rerun()
         else:
-            st.markdown(
-                '<p class="disclaimer">Incorrect access code.</p>',
-                unsafe_allow_html=True,
-            )
+            st.markdown('<p class="disclaimer">Incorrect access code.</p>', unsafe_allow_html=True)
+
     return False
 
 def render_screen_consent():
@@ -387,41 +412,71 @@ def render_screen_upload():
     st.markdown('<p class="section-heading">Skin Analysis</p>', unsafe_allow_html=True)
     st.markdown('<p class="disclaimer" style="margin-top:0; margin-bottom: 1.5rem;">For optimal precision, ensure your face is well-lit and free of filters.</p>', unsafe_allow_html=True)
 
-    uploaded_file = st.file_uploader(label="Upload portrait", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+    limit_reached = st.session_state.get("analysis_count", 0) >= _MAX_ANALYSES_PER_SESSION
+    if limit_reached:
+        st.markdown(
+            f'<p class="disclaimer">You\'ve reached the maximum of {_MAX_ANALYSES_PER_SESSION} '
+            'analyses for this session. Please refresh the page to start a new session.</p>',
+            unsafe_allow_html=True,
+        )
+        return
 
-    if uploaded_file is not None:
-        st.image(uploaded_file, caption="Secure Preview", width="stretch")
+    source = st.radio(
+        "Image source", ["Upload a photo", "Take a photo"],
+        horizontal=True, label_visibility="collapsed",
+        key="image_source",
+    )
+
+    raw_file = None
+    if source == "Upload a photo":
+        raw_file = st.file_uploader(label="Upload portrait", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+    else:
+        raw_file = st.camera_input("Take a portrait", label_visibility="collapsed")
+
+    if raw_file is not None:
+        # Reset rotation whenever a genuinely new image arrives.
+        image_key = getattr(raw_file, "file_id", None) or f"{raw_file.name}:{raw_file.size}"
+        if st.session_state.get("last_image_key") != image_key:
+            st.session_state["last_image_key"] = image_key
+            st.session_state["rotation_degrees"] = 0
+
+        oriented_image = apply_orientation(Image.open(raw_file))
+        st.image(oriented_image, caption="Secure Preview", width="stretch")
+
+        rot_col, _ = st.columns([1, 2])
+        with rot_col:
+            if st.button("Rotate 90°", use_container_width=True):
+                st.session_state["rotation_degrees"] = (st.session_state.get("rotation_degrees", 0) + 90) % 360
+                st.rerun()
+        st.markdown(
+            f'<p class="disclaimer" style="margin-top:0.4rem;">Rotation applied: {st.session_state.get("rotation_degrees", 0)}°</p>',
+            unsafe_allow_html=True,
+        )
         st.write("")
 
         if not MODEL_AVAILABLE:
             st.error("Engine offline. Please verify the inference backend is initialized.")
             return
 
-        limit_reached = st.session_state.get("analysis_count", 0) >= _MAX_ANALYSES_PER_SESSION
-
         col1, col2 = st.columns([1, 1])
         with col1:
-            analyse_clicked = st.button("Process Image", use_container_width=True, disabled=limit_reached)
+            analyse_clicked = st.button("Process Image", use_container_width=True)
         with col2:
             if st.button("Reset", use_container_width=True):
                 reset_session()
                 st.rerun()
 
-        if limit_reached:
-            st.markdown(
-                '<p class="disclaimer">You\'ve reached the maximum of '
-                f'{_MAX_ANALYSES_PER_SESSION} analyses for this session. '
-                'Please refresh the page to start a new session.</p>',
-                unsafe_allow_html=True,
-            )
-
         if analyse_clicked:
             with st.spinner("Analyzing dermatological markers..."):
-                vision_result, routing_result = run_inference(uploaded_file)
+                # Re-derive the corrected image fresh, in case rotation changed
+                # after the preview above was first drawn this run.
+                final_image = apply_orientation(Image.open(raw_file))
+                vision_result, routing_result = run_inference(final_image)
 
             st.session_state["analysis_count"] = st.session_state.get("analysis_count", 0) + 1
             st.session_state["vision_result"] = vision_result
             st.session_state["diagnosis_result"] = routing_result
+            st.session_state["diagnosis_label"] = vision_result.get("condition", "Unknown")
 
             log_diagnosis_to_db(
                 condition=vision_result.get("condition", "Unknown"),
@@ -436,7 +491,6 @@ def render_routine_table(routine: list) -> str:
     for item in routine:
         phase_badge = get_phase_badge(item.get("treatment_phase", ""))
         rows_html += f'<tr><td>{phase_badge}</td><td><strong>{item.get("active_compound", "")}</strong></td><td>{item.get("dermatological_logic", "")}</td></tr>'
-
     return f'<table class="routine-table"><thead><tr><th>Phase</th><th>Active Compound</th><th>Mechanism of Action</th></tr></thead><tbody>{rows_html}</tbody></table>'
 
 def render_visible_features(features: list):
@@ -458,7 +512,11 @@ def render_screen_results():
     status = routing_result.get("status")
 
     if status == "success":
-        st.markdown(f'<div class="banner {display["banner_class"]}"><p class="banner-title" style="color:{display["colour"]};">{display["title"]}</p></div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="banner banner-{display["banner_class"]}"><p class="banner-title" '
+            f'style="color:{display["colour"]};">{display["title"]}</p></div>',
+            unsafe_allow_html=True,
+        )
         render_visible_features(visible_features)
 
         table_html = render_routine_table(routing_result["routine"]) if routing_result.get("routine") else ""
@@ -476,9 +534,16 @@ def render_screen_results():
         )
 
     elif status == "medical_redirect":
-        st.markdown(f'<div class="banner banner-severe"><p class="banner-title" style="color:{display["colour"]};">{display["title"]}</p></div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="banner banner-severe"><p class="banner-title" '
+            f'style="color:{display["colour"]};">{display["title"]}</p></div>',
+            unsafe_allow_html=True,
+        )
         render_visible_features(visible_features)
-        st.markdown(f'<div class="card"><p style="font-weight:300;">{routing_result.get("message", "")}</p></div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="card"><p style="font-weight:300;">{routing_result.get("message", "")}</p></div>',
+            unsafe_allow_html=True,
+        )
 
     elif status == "inconclusive":
         reason = routing_result.get("reason")
@@ -491,13 +556,26 @@ def render_screen_results():
         else:
             copy = ("We could not produce a reliable result for this image. "
                     "Please try again, or consult a dermatologist if the issue persists.")
-        st.markdown('<div class="banner banner-inconclusive"><p class="banner-title" style="color:#A0A0A0;">Analysis Inconclusive</p></div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="banner banner-inconclusive"><p class="banner-title" '
+            'style="color:#A0A0A0;">Analysis Inconclusive</p></div>',
+            unsafe_allow_html=True,
+        )
         render_visible_features(visible_features)
         st.markdown(f'<div class="card"><p style="font-weight:300;">{copy}</p></div>', unsafe_allow_html=True)
 
     else:
-        st.markdown('<div class="banner banner-inconclusive"><p class="banner-title" style="color:#A0A0A0;">Unable to Complete Analysis</p></div>', unsafe_allow_html=True)
-        st.markdown('<div class="card"><p style="font-weight:300;">Something unexpected happened while processing your results. Please consult a licensed dermatological professional for guidance.</p></div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="banner banner-inconclusive"><p class="banner-title" '
+            'style="color:#A0A0A0;">Unable to Complete Analysis</p></div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            '<div class="card"><p style="font-weight:300;">Something unexpected happened while '
+            'processing your results. Please consult a licensed dermatological professional for '
+            'guidance.</p></div>',
+            unsafe_allow_html=True,
+        )
 
     st.write("")
     if st.button("Start New Analysis"):
@@ -524,4 +602,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
